@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-// Define the Student structure
 typedef struct {
     int rollNo;
     char name[50];
@@ -12,7 +11,6 @@ typedef struct {
     char grade;
 } Student;
 
-// Function to calculate the grade
 void calculateGrade(Student *student) {
     if (student->percentage >= 90) {
         student->grade = 'A';
@@ -26,8 +24,6 @@ void calculateGrade(Student *student) {
         student->grade = 'F';
     }
 }
-
-// Function to read student details
 void readStudents(Student emp[], int n) {
     printf("Enter student details (RollNo, Name, Maths, Physics, Chemistry, CS):\n");
     for (int i = 0; i < n; i++) {
@@ -35,7 +31,7 @@ void readStudents(Student emp[], int n) {
         printf("Roll No: ");
         scanf("%d", &emp[i].rollNo);
         printf("Name: ");
-        scanf(" %s", emp[i].name); // Read name with spaces
+        scanf(" %s", emp[i].name);
         printf("Maths: ");
         scanf("%d", &emp[i].maths);
         printf("Physics: ");
@@ -47,12 +43,10 @@ void readStudents(Student emp[], int n) {
 
         emp[i].totalMarks = emp[i].maths + emp[i].physics + emp[i].chemistry + emp[i].cs;
         emp[i].percentage = (float)emp[i].totalMarks / 4.0;
-        calculateGrade(&emp[i]); // Calculate grade
+        calculateGrade(&emp[i]); 
         printf("\n");
     }
 }
-
-// Function to display student details
 void displayStudents(Student emp[], int n) {
     printf("\n------------------------------------------------------------------\n");
     printf("%-10s %-20s %-7s %-7s %-7s %-7s %-7s %-7s %-7s\n", "Roll No", "Name", "Maths", "Physics", "Chem", "CS", "Total", "Percentage", "Grade");
@@ -62,13 +56,10 @@ void displayStudents(Student emp[], int n) {
     }
     printf("------------------------------------------------------------------\n");
 }
-
-// Function to manage students (menu-driven)
 void manageStudents() {
     int studentCount = 0;
-    Student students[1000]; // Array to hold student data
+    Student students[1000];
     int choice;
-
     do {
         printf("\nStudent Management Menu:\n");
         printf("1. Read Student Details\n");
@@ -100,6 +91,7 @@ void manageStudents() {
 }
 
 int main() {
-    manageStudents(); // Call the student management function
+    manageStudents(); 
     return 0;
 }
+
