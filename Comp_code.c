@@ -35,7 +35,7 @@ void readStudents(Student emp[], int n) {
         printf("Roll No: ");
         scanf("%d", &emp[i].rollNo);
         printf("Name: ");
-        scanf(" %[^\n]s", emp[i].name); // Read name with spaces
+        scanf(" %s", emp[i].name); // Read name with spaces
         printf("Maths: ");
         scanf("%d", &emp[i].maths);
         printf("Physics: ");
